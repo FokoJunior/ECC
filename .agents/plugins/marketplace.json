@@ -1,0 +1,21 @@
+{
+  "name": "junior-dev",
+  "interface": {
+    "displayName": "Junior Dev"
+  },
+  "plugins": [
+    {
+      "name": "junior-dev",
+      "version": "2.2.3",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

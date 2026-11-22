@@ -1,0 +1,76 @@
+{
+  "name": "junior-dev-universal",
+  "version": "2.2.3",
+  "description": "Junior Dev plugin for OpenCode - agents, commands, hooks, and skills",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./plugins": {
+      "types": "./dist/plugins/junior-dev-hooks.d.ts",
+      "import": "./dist/plugins/junior-dev-hooks.js"
+    },
+    "./tools": {
+      "types": "./dist/tools/index.d.ts",
+      "import": "./dist/tools/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "commands",
+    "prompts",
+    "instructions",
+    "opencode.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "claude-code",
+    "agents",
+    "junior-dev",
+    "ai-coding",
+    "developer-tools",
+    "hooks",
+    "automation"
+  ],
+  "author": "affaan-m",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junior-dev/junior-dev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/junior-dev/junior-dev/issues"
+  },
+  "homepage": "https://github.com/junior-dev/junior-dev#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "zod": "4.6.7"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@opencode-ai/plugin": "^1.4.3",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "overrides": {
+    "zod": "4.6.7"
+  }
+}

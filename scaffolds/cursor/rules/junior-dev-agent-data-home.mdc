@@ -1,0 +1,16 @@
+---
+description: "Junior Dev Cursor memory boundary — keeps session data out of Claude Code's ~/.claude"
+alwaysApply: true
+---
+
+# Junior Dev agent data home (Cursor)
+
+This project uses Junior Dev with **isolated memory persistence** for Cursor:
+
+- Default data root: `~/.cursor/junior-dev` (not `~/.claude`)
+- Env var: `JUNIOR_DEV_AGENT_DATA_HOME` (set automatically by Junior Dev's Cursor `sessionStart` hook when hooks are wired)
+- Project override: `.cursor/junior-dev-agent-data.json` → `agentDataHome`
+
+If the user asks where Junior Dev stored session context or learned skills, point them at `$JUNIOR_DEV_AGENT_DATA_HOME/session-data/` and `$JUNIOR_DEV_AGENT_DATA_HOME/skills/learned/`.
+
+To **share** memory with Claude Code intentionally (not recommended for parallel use), set `JUNIOR_DEV_AGENT_DATA_HOME` to `~/.claude` in the shell or in `.cursor/junior-dev-agent-data.json`.
